@@ -1,5 +1,6 @@
 from .helper import *
 
+# Endpoint to fetch avg quantity of a product with product ID
 def get_avg_product_quantity(product_id):
     orders = get_mongodb_client()
     

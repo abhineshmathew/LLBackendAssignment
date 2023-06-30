@@ -1,6 +1,7 @@
 from .helper import *
 import json
 
+# Endpoint to fetch order details with order ID
 def get_order(order_id):
     try:
         orders = get_mongodb_client()
@@ -12,7 +13,7 @@ def get_order(order_id):
     except:
         return {'error': 'Invalid order ID'},400
     
-
+# Endpoint to fetch avg product count
 def get_avg_product_count():
     orders = get_mongodb_client()
 
@@ -21,6 +22,7 @@ def get_avg_product_count():
     average = total_products / total_orders if total_orders > 0 else 0
     return { "average_product_count":average },200
 
+# Endpoint to dump data from JSON to mongoDB
 def load_data():
     orders = get_mongodb_client()
 
